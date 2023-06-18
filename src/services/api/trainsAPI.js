@@ -2,15 +2,14 @@ import axios from 'axios';
 
 const BASIC_URL = "http://localhost:3001"
 
-export async function getAllTrains() {
+export async function getAllTrains(pagination) {
+    const { limit = 30 , page = 1} = pagination
     try {
-        const trains = await axios.get(`${BASIC_URL}/trains`)
-
+        const trains = await axios.get(`${BASIC_URL}/trains?page=${page}&limit=${limit}`)
         return trains.data 
     } catch (e) {
         console.log("Error in getAllTrains" , e.message );
     }   
-
 }
 
 export async function getAllTrainsByCreator(id) {

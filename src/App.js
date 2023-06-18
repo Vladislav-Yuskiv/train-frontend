@@ -28,10 +28,10 @@ function App() {
             }
            />
           <Route
-            path="/admin/login"
+            path="/admin/admin"
             element={
                 <Suspense fallback={<Loader />}>
-                  <RegisterPage />
+                  {/* <LoginPage /> */}
                 </Suspense>      
             }
           />

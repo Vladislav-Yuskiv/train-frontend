@@ -10,13 +10,11 @@ const CreateAdmin = () => {
    const handleSubmit = async  (e) => {
     e.preventDefault();
 
-    // Виклик функції для створення адміна з даними форми
     const admin = createAdmin({ name, email, password });
-console.log('admin', admin);
-    // Очищення полів форми після відправки
-    // setName('');
-    // setEmail('');
-    // setPassword('');
+
+    setName('');
+    setEmail('');
+    setPassword('');
   };
 
   return (

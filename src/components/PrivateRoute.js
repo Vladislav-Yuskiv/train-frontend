@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom"
 
-export default function PrivateRoute() {
+export default function PrivateRoute({redirectTo}) {
 
     const [ isValid , setIsValid] = useState(false)
     
@@ -9,7 +9,9 @@ export default function PrivateRoute() {
         const token = localStorage.getItem('token');
 
         const parseToken = JSON.parse(token)
+
+        //this we need to check token
     })
-    return isLoggedIn ? children : <Navigate to={redirectTo} />;
+    return isValid ? children : <Navigate to={redirectTo} />;
 }
 
